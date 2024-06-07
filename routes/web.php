@@ -1,6 +1,10 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\backend\BlogController;
+use App\Http\Controllers\backend\UserController;
+use App\Http\Controllers\backend\AuthorController;
+use App\Http\Controllers\backend\DashboardController;
 
 /*
 |--------------------------------------------------------------------------
@@ -16,3 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::get('/dashboard', [DashboardController::class, 'index']);
+Route::get('/author', [AuthorController::class, 'index']);
+Route::get('/blog', [BlogController::class, 'index']);
+Route::get('/user', [UserController::class, 'index']);
